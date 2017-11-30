@@ -1,0 +1,139 @@
+﻿<!DOCTYPE html>
+<!--PURE ANGULAR and  Angular Material-->
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.css">
+</head>
+
+<body>
+    <div ng-app="myApp" ng-controller="myCtrl">
+        First Name: <input type="text" ng-model="firstName"><br>
+        Last Name: <input type="text" ng-model="lastName"><br>
+        <br>
+        Full Name: {{firstName + " " + lastName}}
+        <!--Filters-->
+        <p>The name is {{ lastName | lowercase }}</p>
+        <p>The name is {{ lastName | uppercase }}</p>
+
+        <h1>Price: {{ price | currency }}</h1>
+
+        <!--events-->
+        <h1 ng-mousemove="count = count + 1">Mouse over me!</h1>
+        <h2>{{ count }}</h2>
+
+        <h1>{{theTime}}</h1>
+
+        <!--hinde show-->
+
+        <form>
+            Check to show a header:
+            <input type="checkbox" ng-model="myVar">
+        </form>
+        <h1 ng-show="myVar">My Header</h1>
+
+
+        <select>
+            <option ng-repeat="x in names">{{x}}</option>
+        </select>
+
+        <select ng-model="selectedCar" ng-options="x for (x, y) in cars"></select>
+        <h1>You selected: {{selectedCar}}</h1>
+
+
+        <table border="1">
+            <tr ng-repeat="x in jsontest">
+                <td>{{x.Name}}</td>
+                <td>{{x.City}}</td>
+                <td>{{x.Country}}</td>
+            </tr>
+        </table>
+
+    </div>
+    <script>
+        var app = angular.module('myApp', []);
+        
+    app.controller('myCtrl', function($scope , $interval) {
+        $scope.firstName = "John";
+        $scope.lastName = "Doe";
+        $scope.count = 0;
+        $scope.price = 20;
+
+        //----
+        $scope.names = ["Emil", "Tobias", "Linus"];
+
+        $scope.cars = {
+            car01: "Ford",
+            car02: "Fiat",
+            car03: "Volvo"
+        }
+
+
+        //----
+
+        $scope.jsontest = [
+            { "Name": "Max Joe", "City": "Lulea", "Country": "Sweden" },
+            { "Name": "Manish", "City": "Delhi", "Country": "India" },
+            { "Name": "Koniglich", "City": "Barcelona", "Country": "Spain" },
+            { "Name": "Max Joe", "City": "Lulea", "Country": "Sweden" },
+            { "Name": "Manish", "City": "Delhi", "Country": "India" },
+            { "Name": "Koniglich", "City": "Barcelona", "Country": "Spain" },
+            { "Name": "Max Joe", "City": "Lulea", "Country": "Sweden" },
+            { "Name": "Manish", "City": "Delhi", "Country": "India" },
+            { "Name": "Koniglich", "City": "Barcelona", "Country": "Spain" },
+            { "Name": "Max Joe", "City": "Lulea", "Country": "Sweden" },
+            { "Name": "Manish", "City": "Delhi", "Country": "India" },
+            { "Name": "Koniglich", "City": "Barcelona", "Country": "Spain" },
+            { "Name": "Max Joe", "City": "Lulea", "Country": "Sweden" },
+            { "Name": "Manish", "City": "Delhi", "Country": "India" },
+            { "Name": "Koniglich", "City": "Barcelona", "Country": "Spain" },
+            { "Name": "Max Joe", "City": "Lulea", "Country": "Sweden" },
+            { "Name": "Manish", "City": "Delhi", "Country": "India" },
+            { "Name": "Koniglich", "City": "Barcelona", "Country": "Spain" },
+            { "Name": "Wolski", "City": "Arhus", "Country": "Denmark" }
+        ];
+
+
+        //-------
+        $scope.theTime = new Date().toLocaleTimeString();
+        $interval(function () {
+            $scope.theTime = new Date().toLocaleTimeString();
+        }, 1000);
+        //-----
+
+
+
+    });
+    </script>
+
+
+
+    
+
+
+
+    <!-- Angular Material requires Angular.js Libraries -->
+   
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular-animate.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular-aria.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular-messages.js"></script>
+
+
+
+
+
+
+    <!-- Angular Material Library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.js"></script>
+
+    <!-- Your application bootstrap  -->
+    <script type="text/javascript">
+
+        /**
+         * You must include the dependency on 'ngMaterial'
+         */
+        angular.module('BlankApp', ['ngMaterial']);
+
+    </script>
+</body>
+</html>

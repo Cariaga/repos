@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-animate.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-sanitize.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-charts/0.2.7/angular-charts.js"></script>
+    <script>
+        angular.module("app", ["chart.js"]).controller("LineCtrl", function ($scope) {
+
+            $scope.labels = ["January", "February", "March", "April", "May", "June", "July"];
+            $scope.series = ['Series A', 'Series B'];
+            $scope.data = [
+                [65, 59, 80, 81, 56, 55, 40],
+                [28, 48, 40, 19, 86, 27, 90]
+            ];
+            $scope.onClick = function (points, evt) {
+                console.log(points, evt);
+            };
+            $scope.datasetOverride = [{ yAxisID: 'y-axis-1' }, { yAxisID: 'y-axis-2' }];
+            $scope.options = {
+                scales: {
+                    yAxes: [
+                        {
+                            id: 'y-axis-1',
+                            type: 'linear',
+                            display: true,
+                            position: 'left'
+                        },
+                        {
+                            id: 'y-axis-2',
+                            type: 'linear',
+                            display: true,
+                            position: 'right'
+                        }
+                    ]
+                }
+            };
+        });
+    </script>
+
+</head>
+<body ng-app ="app" ng-controller="LineCtrl ">
+    <canvas id="line" class="chart chart-line" chart-data="data"
+            chart-labels="labels" chart-series="series" chart-options="options"
+            chart-dataset-override="datasetOverride" chart-click="onClick"></canvas>
+</body>
+</html>

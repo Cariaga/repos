@@ -1,0 +1,38 @@
+﻿<Window x:Class="ScheduledTask.TimePicker"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ScheduledTask"
+        mc:Ignorable="d"
+        Title="TimePicker" Height="154.5" Width="211.5" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <ComboBox x:Name="Hour" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="120" SelectedIndex="0">
+            <ComboBoxItem Content="01"/>
+            <ComboBoxItem Content="02"/>
+            <ComboBoxItem Content="03"/>
+            <ComboBoxItem Content="04"/>
+            <ComboBoxItem Content="05"/>
+            <ComboBoxItem Content="06"/>
+            <ComboBoxItem Content="07"/>
+            <ComboBoxItem Content="08"/>
+            <ComboBoxItem Content="09"/>
+            <ComboBoxItem Content="10"/>
+            <ComboBoxItem Content="11"/>
+            <ComboBoxItem Content="12"/>
+        </ComboBox>
+        <ComboBox x:Name="Minute" HorizontalAlignment="Left" Margin="10,37,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="Minute_SelectionChanged" SelectedIndex="0">
+            <ComboBoxItem Content="00"/>
+            <ComboBoxItem Content="30"/>
+        </ComboBox>
+        <ComboBox x:Name="Sufix" HorizontalAlignment="Left" Margin="10,64,0,0" VerticalAlignment="Top" Width="120" SelectedIndex="0">
+            <ComboBoxItem Content="AM"/>
+            <ComboBoxItem Content="PM"/>
+        </ComboBox>
+        <Button Content="OK" HorizontalAlignment="Left" Margin="56,91,0,0" VerticalAlignment="Top" Width="74" Click="Button_Click"/>
+
+    </Grid>
+</Window>

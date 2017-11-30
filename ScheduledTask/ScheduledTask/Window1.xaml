@@ -1,0 +1,27 @@
+﻿<Window x:Class="ScheduledTask.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ScheduledTask"
+        mc:Ignorable="d"
+        Title="Window1" Height="300" Width="300">
+    <Grid>
+        <ItemsControl x:Name="myItemsControl" Margin="10,10,10,46">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <CheckBox Content="{Binding Caption}" Checked="{Binding IsChecked}" />
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+            <CheckBox x:Name="Monday" Content="Monday" Checked="Monday_Checked"/>
+            <CheckBox x:Name="Tueday" Content="Tueday" Checked="Tueday_Checked"/>
+            <CheckBox x:Name="Wednesday" Content="Wednesday" Checked="Wednesday_Checked"/>
+            <CheckBox x:Name="Thursday" Content="Thursday" Checked="Thursday_Checked"/>
+            <CheckBox x:Name="Friday" Content="Friday" Checked="Friday_Checked"/>
+            <CheckBox x:Name="Saturday" Content="Saturday" Checked="Saturday_Checked"/>
+            <CheckBox x:Name="Sunday" Content="Sunday" Checked="Sunday_Checked"/>
+        </ItemsControl>
+        <Button Content="Button" Margin="0,0,10,10" HorizontalAlignment="Right" Width="76" Height="20" VerticalAlignment="Bottom" Click="Button_Click"/>
+        <Button Content="SelectAll" HorizontalAlignment="Right" Margin="0,0,100,10" VerticalAlignment="Bottom" Width="76" Click="Button_Click_1"/>
+    </Grid>
+</Window>
