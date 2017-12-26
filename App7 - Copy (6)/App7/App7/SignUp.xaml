@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            
+             x:Class="App7.SignUp">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="errorStyle" TargetType="Entry">
+                <Setter Property="FontSize" Value="Large" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="TextColor" Value="Green" />
+            </Style>
+            <Style x:Key="normalStyle" TargetType="Entry">
+                <Setter Property="TextColor" Value="Pink" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Welcome to Xamarin.Forms!"
+                VerticalOptions="CenterAndExpand" />
+            
+            <Label x:Name="InvalidUserName" Text="" TextColor="Red" IsEnabled="False" />
+            <Entry Placeholder="UserName" Keyboard="Default" TextChanged="Username_TextChanged" x:Name="UserName"></Entry>
+            
+            <Label x:Name="InvalidPassword" Text="" TextColor="Red" IsEnabled="False" />
+            <Entry Placeholder="Password" IsPassword="True" TextChanged="Password_TextChanged_1" x:Name="Password"></Entry>
+            
+            <Label x:Name="InvalidEmail" Text="" TextColor="Red" IsEnabled="False" />
+            <Entry Placeholder="Email" Keyboard="Email" TextChanged="Email_TextChanged_2" x:Name="Email"></Entry>
+
+            <Label x:Name="InvalidPhone" Text="" TextColor="Red" IsEnabled="False" />
+            <Entry Placeholder="PhoneNumber" Keyboard="Telephone" TextChanged="PhoneNumber_TextChanged_3" x:Name="PhoneNumber"></Entry>
+
+            <Label x:Name="InvalidName" Text="" TextColor="Red" IsEnabled="False" />
+            <Entry Placeholder="Name" Keyboard="Text" TextChanged="Name_TextChanged_4" x:Name="Name"></Entry>
+            
+            <Label x:Name="InvalidSurname" Text="" TextColor="Red" IsEnabled="False" />
+            <Entry Placeholder="Surname"  Keyboard="Text" TextChanged="Surname_TextChanged_5" x:Name="Surname"></Entry>
+           
+            <Label x:Name="InvalidAddress" Text="" TextColor="Red" IsEnabled="False" />
+            <Entry Placeholder="Address" TextChanged="Address_TextChanged_6" x:Name="Address"></Entry>
+           
+            <Label x:Name="InvalidCity" Text="" TextColor="Red" IsEnabled="False" />
+            <Entry Placeholder="City" TextChanged="City_TextChanged_7" x:Name="City"></Entry>
+            
+            <Button Text="SignUp" Clicked="Button_Clicked"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

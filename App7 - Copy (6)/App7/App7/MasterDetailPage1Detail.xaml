@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App7.MasterDetailPage1Detail"
+             xmlns:maps="clr-namespace:Xamarin.Forms.GoogleMaps;assembly=Xamarin.Forms.GoogleMaps"
+              xmlns:img="clr-namespace:ImageButton.Abstractions;assembly=ImageButton.Abstractions"
+             xmlns:parallax="clr-namespace:DevsDNA.XFParallax;assembly=DevsDNA.XFParallax"
+
+             Title="Detail">
+    <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <StackLayout x:Name="Page0"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <maps:Map x:Name="map" VerticalOptions="FillAndExpand" MyLocationEnabled="True"  HasZoomEnabled="True" HasRotationEnabled="True" HasScrollEnabled="True"/>
+        </StackLayout>
+        <StackLayout x:Name="Page1"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+          
+            <parallax:ParallaxView x:Name="MainParallax" BodyMargin="0,180,0,0" HeaderScrollSpeed="4">
+                <parallax:ParallaxView.HeaderContent>
+                    <ContentView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="Blue">
+                        <Image Aspect="AspectFill" VerticalOptions="Start" x:Name="CoverImage"/>
+                    </ContentView>
+                </parallax:ParallaxView.HeaderContent>
+                <parallax:ParallaxView.BodyContent>
+                    <ContentView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="White" HeightRequest="1300">
+                        <ContentView.Margin>
+                            <!-- need to add specific margin to  Windows to show header.-->
+                            <OnPlatform x:TypeArguments="Thickness" WinPhone="0,180,0,0"/>
+                        </ContentView.Margin>
+                        <StackLayout>
+                            <Image x:Name="ProfilePicture" HorizontalOptions="Center" VerticalOptions="Start" Margin="0,-50,0,0" HeightRequest="100" WidthRequest="100"
+                                   Aspect="AspectFit"/>
+                            <Label x:Name="FullName" Text="Full Name" FontSize="15" Margin="50,0,0,0"></Label>
+                            <!-- <Label x:Name="Email" Text="Email" FontSize="15" Margin="50,0,0,0"></Label>--> 
+                            <Label x:Name="Age" Text="Number" FontSize="15" Margin="50,0,0,0"></Label>
+                            <Label x:Name="Gender" Text="Gender"  FontSize="15" Margin="50,0,0,0"></Label>
+                            <Label x:Name="Link" Text="View Facebook Page" FontSize="15" Margin="50,0,0,0" TextColor="Blue"></Label>
+                        </StackLayout>
+                      
+                    </ContentView>
+                </parallax:ParallaxView.BodyContent>
+            </parallax:ParallaxView>
+         
+        </StackLayout>
+        <StackLayout x:Name="Page2"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <SearchBar Placeholder="Search"/>
+            
+            <ListView  x:Name="ListViewTask" RowHeight="60">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="Fill">
+                                <Image Source="{Binding Image}"/>
+                                <StackLayout Orientation="Vertical">
+                                    <Label Text = "{Binding Name}" FontSize="24"/>
+                                    <Label Text = "{Binding Type}"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <StackLayout Orientation="Horizontal" x:Name="SnackBar">
+                <StackLayout Orientation="Vertical">
+                    <img:ImageButton Source="car.png" HeightRequest="18" WidthRequest="18" x:Name="CarCategory" Clicked="CarCategory_Clicked"></img:ImageButton>
+                    <Label Text="CarRide"></Label>
+                </StackLayout>
+                <StackLayout Orientation="Vertical">
+                    <img:ImageButton Source="motorcycle.png"  HeightRequest="18" WidthRequest="18" x:Name="BikeCategory" Clicked="BikeCategory_Clicked"></img:ImageButton>
+                    <Label Text="Bike Ride"></Label>
+                </StackLayout>
+                <StackLayout Orientation="Vertical">
+                    <img:ImageButton Source="house.png"  HeightRequest="18" WidthRequest="18"  x:Name="HouseCategory" Clicked="HouseCategory_Clicked"></img:ImageButton>
+                    <Label Text="House Clean"></Label>
+                </StackLayout>
+                <StackLayout Orientation="Vertical">
+                    <img:ImageButton Source="deliverytruck.png"  HeightRequest="18" WidthRequest="18"  x:Name="DeliveryCategory" Clicked="DeliveryCategory_Clicked"></img:ImageButton>
+                    <Label Text="Item Delivery"></Label>
+                </StackLayout>
+                <StackLayout Orientation="Vertical">
+                    <img:ImageButton Source="cart.png"  HeightRequest="18" WidthRequest="18"  x:Name="CartCategory" Clicked="CartCategory_Clicked"></img:ImageButton>
+                    <Label Text="Grocery"></Label>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+        <StackLayout x:Name="Page3"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="20">
+            <Label Text="HybridMap"></Label>
+            <Switch x:Name="Hybrid" IsToggled="False" Toggled="Hybrid_Toggled"></Switch>
+         
+        </StackLayout>
+        <StackLayout x:Name="Page4"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            
+            <Label x:Name="Debugposition"></Label>
+            <Label x:Name="LocationAvilableText"></Label>
+            <Label x:Name="LocationEnableText"></Label>
+            <Entry x:Name="Bug" Placeholder="Enter Here"></Entry>
+            <Button x:Name="BugReport" Text="Send Report"></Button>
+        </StackLayout>
+        <StackLayout x:Name="Page5" VerticalOptions="CenterAndExpand" Padding="20">
+            <Label Text="Are you sure you want to logout?" FontSize="40" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"></Label>
+            <Button Text="LogOut" x:Name="Logout" Clicked="Logout_Clicked"></Button>
+        </StackLayout>
+        
+        
+    </StackLayout>
+</ContentPage>

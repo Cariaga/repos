@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:App7"
+             xmlns:maps="clr-namespace:Xamarin.Forms.GoogleMaps;assembly=Xamarin.Forms.GoogleMaps"
+             xmlns:img="clr-namespace:ImageButton.Abstractions;assembly=ImageButton.Abstractions"
+             x:Class="App7.MainPage">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Center" Padding="20">
+            <Image HeightRequest="200" WidthRequest="200" x:Name="logo"/>
+            <Entry x:Name="Username"></Entry>
+            <Entry x:Name="Password"></Entry>
+            <Button x:Name="SignInButton" Text="Sign In" Clicked="SignInButton_Clicked" Opacity="1" IsEnabled="False"></Button>
+            <Button x:Name="SignUpButton" Text="Sign Up" Clicked="SignUpButton_Clicked" Opacity="1" IsEnabled="False">
+            </Button>
+            <Label Text="OR" VerticalTextAlignment="Center" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></Label>
+            <!--<Button x:Name="FacebookLogin" Text="Login With Facebook" Clicked="FacebookLogin_Clicked"></Button>--> 
+            <img:ImageButton Source="facebook.png" Clicked="FacebookLogin_Clicked"></img:ImageButton>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

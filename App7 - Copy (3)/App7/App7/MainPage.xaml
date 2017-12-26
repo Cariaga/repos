@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:App7"
+            xmlns:maps="clr-namespace:Xamarin.Forms.GoogleMaps;assembly=Xamarin.Forms.GoogleMaps"
+             x:Class="App7.MainPage">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Center" Padding="20">
+            <Entry x:Name="Username"></Entry>
+            <Entry x:Name="Password"></Entry>
+            <Button x:Name="SignInButton" Text="Sign In" Clicked="SignInButton_Clicked"></Button>
+            <Button x:Name="SignUpButton" Text="Sign Up" Clicked="SignUpButton_Clicked"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

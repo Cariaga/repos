@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:App6"
+              xmlns:tk="clr-namespace:TK.CustomMap;assembly=TK.CustomMap" 
+             x:Class="App6.MainPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <tk:TKCustomMap x:Name="custom" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+            <Button x:Name="clicked" Clicked="clicked_Clicked" ></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
